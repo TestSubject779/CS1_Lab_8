@@ -1,7 +1,7 @@
-#include <time.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 int extraMemoryAllocated;
 
@@ -55,7 +55,7 @@ void merge(int arr[], int l, int m, int r)
 	int *L = (int *) malloc(n1 * sizeof(int));
 	int *R = (int *) malloc(n1 * sizeof(int));
 
-	extraMemoryAllocated += 2;
+	extraMemoryAllocated += ((r - l) + 1) * sizeof(int);
 
 	for (i = 0; i < n1; i++)
 		L[i] = arr[l + i];
